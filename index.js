@@ -1,5 +1,6 @@
 // 1 - createEmployeeRecord
 const createEmployeeRecord = array => ({
+    //if it returns an array, these are the keys and what index number they will be found
     firstName: array[0],
     familyName: array[1],
     title: array[2],
@@ -9,7 +10,28 @@ const createEmployeeRecord = array => ({
 });
 
 // 2 - createEmployeeRecords
+//I don't understand this. It works, but I don't understand. 
 const createEmployeeRecords = arrayOfArrays => arrayOfArrays.map(createEmployeeRecord);
+/*
+I had AI explain.
+
+const createEmployeeRecords = arrayOfArrays => arrayOfArrays.map(createEmployeeRecord);
+const createEmployeeRecords: This declares a constant variable createEmployeeRecords which is assigned a function.
+
+arrayOfArrays =>: This is an arrow function syntax, indicating that the function takes a single parameter named arrayOfArrays.
+
+arrayOfArrays.map(createEmployeeRecord): The .map() function is called on arrayOfArrays. For each array in arrayOfArrays, it applies the createEmployeeRecord function and creates a new array containing the results.
+
+Here's a breakdown of why it's shorter:
+
+The use of arrow functions (() =>) allows for concise function definitions without the need for the function keyword.
+
+arrayOfArrays.map(createEmployeeRecord) is a concise way of saying "for each array in arrayOfArrays, apply the createEmployeeRecord function to it and collect the results into a new array."
+
+JavaScript's built-in higher-order functions like .map() abstract away a lot of the looping and array manipulation logic, making the code more succinct.
+
+The createEmployeeRecord function is presumably defined elsewhere and is being referenced directly.
+*/ 
 
 // 3 - createTimeInEvent
 const createTimeInEvent = (employeeRecord, dateStamp) => {
